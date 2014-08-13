@@ -1,14 +1,25 @@
-def divisible_by_three(number)
-	number % 3 == 0  
-end  
-
-def divisible_by_five(number)
-	number % 5 == 0 
+def div_by_three?(number)
+	div_by(number, 3) 
 end 
 
-def fizzbuzz(number)
-	return "FizzBuzz" if divisible_by_three(number) && divisible_by_five(number)
-	return "Buzz" if divisible_by_five(number)
-	return "Fizz" if divisible_by_three(number)
-	
+def div_by_five?(number)
+	div_by(number, 5) 
 end 
+
+def div_by_fifteen?(number)
+	div_by(number, 15)
+end
+
+def div_by(number, divisor)
+	number % divisor == 0
+end 
+
+def fizzbuzz(number) 
+	return "FizzBuzz" if div_by_fifteen?(number)
+	return "Fizz" if div_by_three?(number)
+	return "Buzz" if div_by_five?(number)
+	number 
+
+end 
+
+
